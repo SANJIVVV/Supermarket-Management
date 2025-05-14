@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modify Product</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-image: url('s1.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-transform: uppercase;
+        }
+        .container {
+            background-color: rgba(0, 0, 0, 0.4); /* Black background with transparency */
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
+            width: 100%;
+            max-width: 600px;
+            box-sizing: border-box;
+            position: absolute; /* Changed to absolute positioning */
+            left: 10px; /* Move to the left */
+            top: 50%; /* Center vertically */
+            transform: translateY(-50%); /* Center vertically */
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            margin-bottom: 10px;
+            color: rgba(255, 255, 255, 0.9); /* Light white for better contrast */
+            font-size: 18px;
+            font-family: 'Roboto', sans-serif;
+            font-weight: normal;
+        }
+        input[type="text"],
+        input[type="number"] {
+            padding: 14px;
+            border: 2px solid rgba(255, 255, 255, 0.5); /* Light border color with transparency */
+            border-radius: 6px;
+            margin-bottom: 15px;
+            width: 100%;
+            box-sizing: border-box;
+            font-size: 16px;
+            font-family: 'Arial', sans-serif;
+            background-color: rgba(0, 0, 0, 0); /* Black background for inputs with transparency */
+            color: rgba(255, 255, 255, 0.9); /* Light text color for contrast */
+        }
+        input[type="submit"] {
+            background-color: rgba(0, 0, 0, 0); /* Black background for button with transparency */
+            color: rgba(255, 255, 255, 0.9); /* Light text color */
+            border: none;
+            padding: 14px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 18px;
+            font-family: 'Arial', sans-serif;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+        input[type="submit"]:hover {
+            background-color: rgba(0, 0, 0, 0); /* Darker black for hover effect */
+        }
+        .view-link {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+            color: rgba(255, 255, 255, 0.9); /* Light color for link */
+            text-decoration: none;
+        }
+        .view-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        <form action="modify_product.php" method="post">
+            <label for="current_name">Current Product Name or ID:</label>
+            <input type="text" id="current_name" name="current_name" required><br>
+            <label for="new_name">New Product Name:</label>
+            <input type="text" id="new_name" name="new_name"><br>
+            <label for="new_category">New Category:</label>
+            <input type="text" id="new_category" name="new_category"><br>
+            <label for="new_price">New Price:</label>
+            <input type="number" id="new_price" name="new_price" step="0.01"><br>
+            <label for="new_stock_quantity">New Stock Quantity:</label>
+            <input type="number" id="new_stock_quantity" name="new_stock_quantity"><br>
+            <input type="submit" value="MODIFY PRODUCT">
+        </form>
+    </div>
+
+</body>
+</html>

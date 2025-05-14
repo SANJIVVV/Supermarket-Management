@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Review</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-image: url('P_REVIEW.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-transform: uppercase;
+        }
+        .container {
+            background-color: rgba(0, 0, 0, 0.4);
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
+            width: 100%;
+            max-width: 600px;
+            box-sizing: border-box;
+            margin: 0 auto;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            margin-bottom: 10px;
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 18px;
+            font-family: 'Roboto', sans-serif;
+            font-weight: normal;
+        }
+        input[type="text"],
+        textarea {
+            padding: 14px;
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            border-radius: 6px;
+            margin-bottom: 15px;
+            width: 100%;
+            box-sizing: border-box;
+            font-size: 16px;
+            background-color: rgba(0, 0, 0, 0);
+            color: rgba(255, 255, 255, 0.9);
+        }
+        .rating {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+        }
+        .rating input {
+            display: none; /* Hide original radio buttons */
+        }
+        .rating label {
+            font-size: 30px;
+            color: #ddd; /* Default color for stars */
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+        .rating input:checked ~ label {
+            color: #f39c12; /* Color for selected stars */
+        }
+        .rating input:checked + label {
+            color: #f39c12; /* Color for the selected star */
+        }
+        .quality-options {
+            margin-bottom: 15px;
+        }
+        .quality-options input {
+            margin-right: 10px;
+        }
+        input[type="submit"] {
+            background-color: rgba(0, 0, 0, 0);
+            color: rgba(255, 255, 255, 0.9);
+            border: none;
+            padding: 14px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+        input[type="submit"]:hover {
+            background-color: rgba(0, 0, 0, 0.6);
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        <form action="submit_product_review.php" method="post">
+            <label for="product_name">Product Name:</label>
+            <input type="text" id="product_name" name="product_name" required>
+
+            <label for="category">Category:</label>
+            <input type="text" id="category" name="category" required>
+
+            <label for="rating">Rating:</label>
+            <div class="rating">
+                <input type="radio" id="star5" name="rating" value="5" required>
+                <label for="star5">★</label>
+                <input type="radio" id="star4" name="rating" value="4">
+                <label for="star4">★</label>
+                <input type="radio" id="star3" name="rating" value="3">
+                <label for="star3">★</label>
+                <input type="radio" id="star2" name="rating" value="2">
+                <label for="star2">★</label>
+                <input type="radio" id="star1" name="rating" value="1">
+                <label for="star1">★</label>
+            </div>
+
+            <label for="quality">Quality:</label>
+            <div class="quality-options">
+                <input type="radio" id="fresh" name="quality" value="fresh" required>
+                <label for="fresh">Fresh</label>
+                <input type="radio" id="non-fresh" name="quality" value="non-fresh" required>
+                <label for="non-fresh">Non-Fresh</label>
+            </div>
+
+            <label for="suggestion">Suggestions:</label>
+            <textarea id="suggestion" name="suggestion" rows="4" required></textarea>
+
+            <input type="submit" value="SUBMIT REVIEW">
+        </form>
+    </div>
+
+</body>
+</html>

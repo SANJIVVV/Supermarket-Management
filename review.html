@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Review</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-image: url('review.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-transform: uppercase;
+        }
+        .container {
+            background-color: rgba(0, 0, 0, 0.4);
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
+            width: 100%;
+            max-width: 600px;
+            box-sizing: border-box;
+            position: relative; /* Changed to relative positioning */
+            margin: 0 auto; /* Center the container */
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            margin-bottom: 10px;
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 18px;
+            font-family: 'Roboto', sans-serif;
+            font-weight: normal;
+        }
+        input[type="text"],
+        input[type="number"],
+        textarea {
+            padding: 14px;
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            border-radius: 6px;
+            margin-bottom: 15px;
+            width: 100%;
+            box-sizing: border-box;
+            font-size: 16px;
+            background-color: rgba(0, 0, 0, 0);
+            color: rgba(255, 255, 255, 0.9);
+        }
+        input[type="radio"] {
+            margin-right: 10px;
+        }
+        .review-options {
+            margin-bottom: 15px; /* Space between review options and feedback */
+        }
+        input[type="submit"] {
+            background-color: rgba(0, 0, 0, 0);
+            color: rgba(255, 255, 255, 0.9);
+            border: none;
+            padding: 14px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+        input[type="submit"]:hover {
+            background-color: rgba(0, 0, 0, 0.6);
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        <form action="submit_review.php" method="post">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="phone">Phone Number:</label>
+            <input type="number" id="phone" name="phone" required>
+
+            <label for="district">District:</label>
+            <input type="text" id="district" name="district" required>
+
+            <label for="state">State:</label>
+            <input type="text" id="state" name="state" required>
+
+            <label for="address">Address:</label>
+            <input type="text" id="address" name="address" required>
+
+            <label for="review">Review:</label>
+            <div class="review-options">
+                <input type="radio" id="good" name="review" value="good" required>
+                <label for="good">Good</label>
+                <input type="radio" id="average" name="review" value="average" required>
+                <label for="average">Average</label>
+                <input type="radio" id="bad" name="review" value="bad" required>
+                <label for="bad">Bad</label>
+            </div>
+
+            <label for="feedback">Feedback:</label>
+            <textarea id="feedback" name="feedback" rows="4" required style="margin-top: 10px;"></textarea>
+
+            <input type="submit" value="SUBMIT REVIEW">
+        </form>
+    </div>
+
+</body>
+</html>

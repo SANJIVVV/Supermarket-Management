@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SUPERMARKET MANAGEMENT</title>
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap");
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Quicksand", sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #111;
+            width: 100%;
+            overflow: hidden;
+            flex-direction: column;
+        }
+
+        .cd__main {
+            background: #111 !important;
+            min-height: 720px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
+
+        .ring {
+            position: relative;
+            width: 500px;
+            height: 500px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .ring i {
+            position: absolute;
+            inset: 0;
+            border: 2px solid #fff;
+            transition: 0.5s;
+        }
+
+        .ring i:nth-child(1) {
+            border-radius: 38% 62% 63% 37% / 41% 44% 56% 59%;
+            animation: animate 6s linear infinite;
+        }
+
+        .ring i:nth-child(2) {
+            border-radius: 41% 44% 56% 59% / 38% 62% 63% 37%;
+            animation: animate 4s linear infinite;
+        }
+
+        .ring i:nth-child(3) {
+            border-radius: 41% 44% 56% 59% / 38% 62% 63% 37%;
+            animation: animate2 10s linear infinite;
+        }
+
+        .ring:hover i {
+            border: 6px solid var(--clr);
+            filter: drop-shadow(0 0 20px var(--clr));
+        }
+
+        @keyframes animate {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes animate2 {
+            0% {
+                transform: rotate(360deg);
+            }
+            100% {
+                transform: rotate(0deg);
+            }
+        }
+
+        .login {
+            width: 300px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            z-index: 1; /* Ensure login form is above the ring */
+        }
+
+        .login h2 {
+            font-size: 2em;
+            color: #fff;
+            text-align: center;
+        }
+
+        .login .inputBx {
+            width: 100%;
+        }
+
+        .login .inputBx input {
+            width: 100%;
+            padding: 12px 20px;
+            background: rgba(0, 0, 0, 0.3); /* Slightly opaque background for better readability */
+            border: 2px solid #fff;
+            border-radius: 40px;
+            font-size: 1.2em;
+            color: #fff; /* Text color */
+            box-shadow: none;
+            outline: none;
+        }
+
+        .login .inputBx input[type="submit"] {
+            width: 100%;
+            background: linear-gradient(45deg, #ff357a, #fff172);
+            border: none;
+            cursor: pointer;
+            color: #fff; /* Text color for the submit button */
+            padding: 12px;
+            font-size: 1.2em;
+            border-radius: 40px;
+        }
+
+        .login .inputBx input::placeholder {
+            color: rgba(255, 255, 255, 0.75); /* Placeholder text color */
+        }
+
+        .login .links {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+        }
+
+        .login .links a {
+            color: #fff;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <main class="cd__main">
+        <div class="ring">
+            <i style="--clr:#00ff0a;"></i>
+            <i style="--clr:#ff0057;"></i>
+            <i style="--clr:#fffd44;"></i>
+            <div class="login">
+                <h2>CUSTOMER LOGIN</h2>
+                <form action="CUSTOMER_LOGIN.php" method="post">
+                    <div class="inputBx">
+                        <input type="text" id="username" name="username" placeholder="CUSTOMER NAME" required>
+                    </div>
+                    <div class="inputBx">
+                        <input type="password" id="password" name="password" placeholder="PASSWORD" required>
+                    </div>
+                    <div class="inputBx">
+                        <input type="submit" id="loginBtn" value="SIGN IN">
+                    </div>
+                </form>
+                <div class="links">
+                    <a href="#">Forget Password</a>
+                    <a href="CUSTOMER_REGISTER.html">REGISTER</a>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

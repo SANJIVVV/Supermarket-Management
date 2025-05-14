@@ -4,7 +4,7 @@ The **Supermarket Management System (SMS)** is a complete and interactive softwa
 
 This system is ideal for small to medium-sized supermarkets looking to move from manual processes to a digital, centralized platform for better accuracy, efficiency, and control.
 
-### 🖼️ PREVIEW
+## PREVIEW
 
 ![](OUTPUT/1.png)
 
